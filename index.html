@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Financeiro</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.js">
+    
+</head>
+<body>
+    
+       <!-- Modal de Login -->
+<div id="appLoginModal" class="app-modal">
+    <div class="app-modal-content">
+        <h2>Entrar no App</h2>
+        <p>Digite a senha para acessar o aplicativo:</p>
+        <input type="password" id="appPasswordInput" placeholder="Senha" required>
+        <div class="app-modal-actions">
+            <button id="appLoginButton" class="btn-confirm">Entrar</button>
+            <p id="appErrorMessage" class="error-message"></p>
+        </div>
+    </div>
+</div>
+
+
+
+    
+    <div class="container">
+        <h1>Gestão de Finanças</h1>
+        <div class="input-group">
+            <label for="total">Valor Total Recebido:</label>
+            <input type="number" id="total" placeholder="Digite o valor total">
+        </div>
+        <div class="category">
+            <label for="casa">Despesas de Casa:</label>
+            <input type="range" id="casa" min="0" max="100" value="30">
+            <span id="casaValue">30%</span>
+        </div>
+        <div class="category">
+            <label for="poupanca">Poupança:</label>
+            <input type="range" id="poupanca" min="0" max="100" value="20">
+            <span id="poupancaValue">20%</span>
+        </div>
+        <div class="category">
+            <label for="emergencia">Emergência:</label>
+            <input type="range" id="emergencia" min="0" max="100" value="10">
+            <span id="emergenciaValue">10%</span>
+        </div>
+        <div class="category">
+            <label for="lazer">Lazer:</label>
+            <input type="range" id="lazer" min="0" max="100" value="20">
+            <span id="lazerValue">20%</span>
+        </div>
+        <div class="category">
+            <label for="outros">Outros:</label>
+            <input type="range" id="outros" min="0" max="100" value="20">
+            <span id="outrosValue">20%</span>
+        </div>
+        <div id="totalPercentage">Total: 100%</div>
+        <button onclick="calcular()">Calcular</button>
+        <div id="results"></div>
+
+        <div class="history-section">
+            <h2 onclick="toggleHistory()">Histórico <span class="history-emoji">📅</span></h2>
+            <div id="history-content" class="hidden">
+                <!-- O histórico será preenchido dinamicamente aqui -->
+            </div>
+        </div>
+
+         <!-- Modal de Confirmação -->
+            <div id="confirmationModal" class="modal">
+                <div class="modal-content">
+                    <h2>Confirmar Exclusão</h2>
+                    <p>Você tem certeza de que deseja excluir este histórico?</p>
+                    <div class="modal-actions">
+                        <button id="confirmDelete" class="btn-confirm">Sim</button>
+                        <button id="cancelDelete" class="btn-cancel">Não</button>
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+
+    <script src="index.js">
+
+    </script>
+</body>
+</html>
